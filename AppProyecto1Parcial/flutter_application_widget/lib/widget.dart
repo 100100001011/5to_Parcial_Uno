@@ -25,18 +25,18 @@ class Deslizador extends StatefulWidget {
 
 class _DeslizadorState extends State<Deslizador> {
   //VARIABLE
-  double valor = 0;
+  double valorMostrar = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         //TEXTO
-        Text(valor.toString(),style: TextStyle(fontSize: 30)),
+        Text(valorMostrar.toString(),style: TextStyle(fontSize: 30)),
         //DESLIZADOR
         Slider(
             //VALOR
-            value: valor,
+            value: valorMostrar,
             //VALOR_INICIO
             min: 0,
             //VALOR_FINAL
@@ -46,13 +46,13 @@ class _DeslizadorState extends State<Deslizador> {
             //COLRES
             activeColor: Colors.black,
             inactiveColor: Colors.red,
-            //TEXTO
-            label: valor.toString(),
+            //viñeta 
+            label: valorMostrar.toString(),
             //METODO
             onChanged: (value) {
-              
+              //METODO PARA ACTUALIZAR DE FORMA DINAMICA LOS VALORES
               setState(() {
-                valor=value;
+                valorMostrar=value;
               });
             }),
       ],
